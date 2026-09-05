@@ -1,0 +1,44 @@
+[
+{
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+        "name": "Электроника",
+        "description": "Гаджеты и техника"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+        "name": "Одежда",
+        "description": "Модная одежда"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+        "name": "Ноутбук",
+        "description": "",
+        "image": "",
+        "category": 3,
+        "price": "50000.00",
+        "created_at": "2026-09-04T10:01:47.298Z",
+        "updated_at": "2026-09-04T10:01:47.298Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+        "name": "Футболка",
+        "description": "",
+        "image": "",
+        "category": 4,
+        "price": "1500.00",
+        "created_at": "2026-09-04T10:01:47.308Z",
+        "updated_at": "2026-09-04T10:01:47.308Z"
+    }
+}
+]
