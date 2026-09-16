@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title%}Мой магазин{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Мой магазин</h1>
+    </header>
+{% include 'includes/menu.html' %}
+<main>
+    {% block content %}{% endblock%}
+</main>
+<footer>
+    <p> 2026 Мой магазин</p>
+</footer>
+</body>
+</html>
