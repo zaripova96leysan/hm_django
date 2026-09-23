@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Статья{% endblock %}
+
+{% block content %}
+    <h1>Статья</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Сохранить</button>
+    </form>
+    <p><a href="{% url 'blog_list' %}">← Назад к списку</a></p>
+{% endblock %}
