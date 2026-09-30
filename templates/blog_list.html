@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Блог{% endblock %}
+
+{% block content %}
+    <h1>Блог</h1>
+    <a href="{% url 'blog_create' %}">Добавить статью</a>
+
+    {% for post in posts %}
+        <div>
+            {% if post.image %}
+                <img src="{{ post.image.url }}" width="200">
+            {% endif %}
+            <h3><a href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a></h3>
+            <p>{{ post.content|truncatechars:100 }}</p>
+            <p>Просмотров: {{ post.views }}</p>
+            <a href="{% url 'blog_edit' post.pk %}">Редактировать</a>
+            <a href="{% url 'blog_delete' post.pk %}">Удалить</a>
+        </div>
+    {% empty %}
+        <p>Пока статей нет.</p>
+    {% endfor %}
+{% endblock %}
