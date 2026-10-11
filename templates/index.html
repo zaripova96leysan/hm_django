@@ -13,6 +13,13 @@
             <h3><a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a></h3>
             <p>{{ product.description|truncatechars:100 }}</p>
             <p>{{ product.price }} ₽</p>
+
+            {% if user == product.owner or perms.products.can_unpublish_product %}
+                <p>
+                    <a href="{% url 'product_edit' product.pk %}">Редактировать</a>
+                    <a href="{% url 'product_delete' product.pk %}">Удалить</a>
+                </p>
+            {% endif %}
         </div>
     {% empty %}
         <p>Пока товаров нет.</p>
